@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,75 +50,14 @@
     <a href="https://overapi.com/javascript">Шпоры 3</a>
     <a href="https://quickref.me/javascript">Шпоры 4</a>
   </div>
-  <div id="output"><button py-click="DZ_2_1_1_SumOrMul">DZ_2_1_1_SumOrMul</button><div class="code hide"><span>Показать код</span><pre><code>
-# Пользователь вводит с клавиатуры три числа. В зависимости от выбора пользователя программа выводит 
-# на экран сумму трёх чисел или произведение трёх чисел
-  numsStr = input('3 num split space')
-  nums=''
-  if numsStr:
-    nums = numsStr.split()
-  operation = input('operation type (* or +)')
-  total = 0
+  <div id="output"><button py-click="upper_for_word">upper_for_word</button><div class="code hide"><span>Показать код</span><pre><code>
+    str = input('Input text: ')
+    words = input('Input words: ')
 
-  if operation == '*':
-    total = 1
-
-  for n in nums:
-    if operation == '+':
-      total+=int(n)
-    else:
-      total*=int(n)
-      
-  if operation == '+':
-    print(f"sum is {total}")
-  else:
-    print(f"mul is {total}")
-    
-    
-</code></pre></div><button py-click="DZ3_2_4_min_max_sum">DZ3_2_4_min_max_sum</button><div class="code hide"><span>Показать код</span><pre><code>
-# Пользователь вводит с клавиатуры числа. Программа должна подсчитывать сумму, максимум и минимум, 
-# введенных чисел. Когда пользователь вводит число 7 
-# программа прекращает свою работу и выводит на экран 
-# надпись «Good bye!»
-  sum = 0
-  min = None
-  max = None
-  while True:
-    n = input('Введите число')
-    if n:
-      n = int(n)
-    else:
-      return
-    if n==7:
-      print('Good bye')
-      break
-    if min==None and max==None:
-      min = n
-      max = n
-    if n>max:
-      max = n
-    if n<min:
-      min = n
-    sum+=n
-    print(f"min = {min}\nmax = {max}\nsum = {sum}")
-    
-</code></pre></div><button py-click="DZ3_3_4_remove3and6">DZ3_3_4_remove3and6</button><div class="code hide"><span>Показать код</span><pre><code>
-# Пользователь вводит любое целое число. Необходимо из этого целого числа удалить все цифры 3 и 6 и 
-# вывести обратно на экран. 
-  n = input('Введите число')
-  if n:
-    n = int(n)
-  else:
-    return
-  # print (''.join(''.join(nStr.split('3')).split('6')))
-  tail = ''
-  while n:
-    if not (n%10==3 or n%10==6):
-      tail = str(n%10) + tail
-    n//=10
-  print(tail)
-    
-</code></pre></div></div><div id="outputEnd"></div>
+    words = words.split()
+    for word in words:
+         str = str.replace(word, word.upper())
+    print(str)</code></pre></div></div><div id="outputEnd"></div>
 <!-- <script type="py" src="./main.py"></script> -->
 <script type="py" src="./funcs.py"></script>
 <script>
